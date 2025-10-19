@@ -12,7 +12,7 @@ export default function WeatherCard({ current, units }: Props) {
   const speedUnit = units === "metric" ? "m/s" : "mph";
 
   // Fix: Convert to city's local time using timezone offset (in seconds)
-  const localTime = new Date((current.dt + current.timezone) * 10);
+  const localTime = new Date((current.dt + current.timezone) * 100);
   const dateStr = format(localTime, "EEE, MMM d, HH:mm");
 
   return (
