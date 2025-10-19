@@ -11,6 +11,7 @@ export interface WeatherData {
   wind: { speed: number };
   visibility: number;
   dt: number;
+  timezone: number;
 }
 
 export interface ForecastData {
