@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* Define dark mode variant: dark: utilities apply when .dark class is present */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Optionally define CSS variables / theme values */
+@theme {
+  /* Define default (light) theme variables, colors, etc. */
+  --color-bg: #ffffff;
+  --color-text: #111111;
+  --color-bg-alt: #f0f0f0;
+
+  /* You can define more custom variables here */
+}
+
+/* Override theme variables when .dark is present */
+@layer base {
+  .dark {
+    /* Overwrites or different variable values in dark mode */
+    --color-bg: #1a1a1a;
+    --color-text: #f1f1f1;
+    --color-bg-alt: #2a2a2a;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition: background-color 0.3s, color 0.3s;
+  }
+}
